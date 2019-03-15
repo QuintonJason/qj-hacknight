@@ -1,0 +1,183 @@
+@import "layout.css";
+@import "variables.css";
+@import "typography.css";
+
+body {
+  margin: 0;
+}
+
+#weather{
+  display: block;
+}
+
+svg{
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+}
+
+#dot{
+  transform: scale(1, 1);
+  transform-origin: 60% 80%;
+  transition: transform .25s ease;
+}
+
+#dot:hover,
+#dot.on{
+  fill: red;
+  transform: scale(1.05, 1.05);
+}
+
+#dot:hover {
+  cursor: pointer;
+}
+
+#cloud.dark{
+  fill: #333;
+}
+
+#map-canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  // display: none;
+}
+
+.weather-wrapper{
+  max-width: 300px;
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.weather-wrapper.on{
+  display: block;
+}
+
+.weather-form{
+  padding: 1em;
+  background: rgba(0,0,0,.6);
+}
+
+.weather-headline {
+  margin: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.moon-mask {
+
+}
+#weather-info {
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  background: rgba(0,0,0,.6);
+}
+.weather-form label,
+.weather-form input[type="text"]{
+  display: block;
+  margin-bottom: .5rem;
+}
+.weather-form label{
+  color: white;
+}
+.weather-form input[type="text"]{
+
+}
+
+/*HELPERS*/
+.white{ color: white; }
+.caps{ text-transform: capitalize; }
+/*END HELPERS*/
+#text{
+  -webkit-transform: translateY(10px);
+  transform: translateY(10px);
+}
+#Drop_3_{
+  transition: 1s ease;
+}
+.spark{
+  -webkit-animation: spark 2s linear infinite;
+  animation: spark 2s linear infinite;
+}
+
+/******************** Animatios and keyframes ********************/
+
+.spark-1{
+  animation-delay: .6s;
+}
+.spark-2{
+  animation-delay: 1.4s;
+}
+.rain{
+  opacity: 0;
+  -webkit-animation: rain .67s linear infinite;
+  transform-origin: 180px 190px;
+}
+.rain-1{
+  animation-delay: .65s;
+}
+.rain-2{
+  animation-delay: .8s;
+}
+.rain-3{
+  animation-delay: .5s;
+}
+.rain-4{
+  animation-delay: .29s;
+}
+.rain-5{
+  animation-delay: 1.17s;
+}
+@-webkit-keyframes rain {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15%{
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    /* transform: translateY(250%); */
+    transform: translateY(60px);
+  }
+}
+@-webkit-keyframes spark {
+  0% {
+    opacity: 0;
+  }
+  14%{
+    opacity: 0;
+  }
+  18%{
+    opacity: 1;
+  }
+  22%{
+    opacity: 0;
+  }
+
+  74%{
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* HELPERS CLASSES */
+
+.hide{
+  display: none;
+}
