@@ -3,7 +3,14 @@
     <h1>BR Hack Night</h1>
   </header>
   <main>
-    <BrhnLogo />
+    {{!-- When you click on the dot in the logo,
+    toggleProperty of weatherSearch --}}
+    <WeatherSearch
+      class="{{if weatherSearchIsOpen "is-open"}}"
+    />
+    <BrhnLogo
+      @onDotClick={{action "toggleWeatherSearch"}}
+    />
     {{outlet}}
   </main>
 </div>
